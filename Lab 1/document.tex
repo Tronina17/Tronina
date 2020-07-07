@@ -1,0 +1,126 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\newcommand*\PROB\Pr 
+\DeclareMathOperator*{\EXPECT}{\mathbb{E}}
+
+\newcommand{\N}{{{\mathbb N}}}
+\newcommand{\Z}{{{\mathbb Z}}}
+\newcommand{\R}{{{\mathbb R}}}
+\newcommand{\Zp}{\ints_p} 
+\newcommand{\Zq}{\ints_q} 
+\newcommand{\Zn}{\ints_N}
+
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand*{\OLandau}{\bigO}
+\newcommand*{\WLandau}{\Omega}
+\newcommand*{\xOLandau}{\widetilde{\OLandau}}
+\newcommand*{\xWLandau}{\widetilde{\WLandau}}
+\newcommand*{\TLandau}{\Theta}
+\newcommand*{\xTLandau}{\widetilde{\TLandau}}
+\newcommand{\smallo}{o} 
+\newcommand{\softO}{\widetilde{\bigO}}
+\newcommand{\wLandau}{\omega}
+\newcommand{\negl}{\mathrm{negl}} 
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\inprod}[1]{\left\langle #1 \right\rangle}
+
+\begin {document}
+\begin{proof}
+	Заметим,что $ \tau=\sum_{\tiny d|n}1 $, мы можем записать $ \tau $ для $ F $ и взять $ f $, чтобы функция $ f(n)=1 $ была постоянной для всех $ n $.
+\end{proof}
+Таким же образом, соотношение $\sigma(n)=\sum_{\tiny d|n}d $ дает\\
+\label{consequence}
+Следствие 2.
+\textit{Если $ N $ положительное число, то}\[\sum_{n=1}^{N}\sigma(n)=\sum_{n=1}^{N}n\left[\frac{N}{n}\right].\] 
+
+Эти два последних следствия могут быть
+уточнены с помощью 
+
+примера. \vspace{12pt}\\
+\label{example}
+Пример 6-3
+
+Рассмотрим случай $ N=6 $. Результаты на странице 110 говорятнам, 
+
+что \[\sum_{n=1}^{6}\tau(n)=14.\]
+
+Из следствия 1,
+\begin{equation*} \label{eq1}
+\begin{split}
+	\sum_{n=1}^{6}\left[ \frac{6}{n}\right]&=\left[ 6\right] +\left[ 3\right] +\left[ 2\right] +\left[ \frac{3}{2}\right] +\left[ \frac{6}{5}\right] +\left[ 1\right]\\
+	&=6+3+2+1+1+1=14,
+\end{split}
+\end{equation*}
+
+как и должно быть. В данном случаи мы также имеем
+\[\sum_{n=1}^{6}\sigma(n)=33,\]
+
+в то времякак простой расчет приводит к 
+\begin{equation*} \label{eq2}
+\begin{split}
+ \sum_{n=1}^{6}\left[ \frac{6}{n}\right]&=1\left[ 6\right] +2\left[ 3\right] +3\left[ 2\right] +4\left[ \frac{3}{2}\right] +5\left[ \frac{6}{5}\right] +6\left[ 1\right]\\
+&=1\cdot6+2\cdot3+3\cdot2+4\cdot1+5\cdot1+6\cdot1=33
+\end{split}
+\end{equation*}
+
+\newpage
+\begin{center}\Large\textbf{задания 6.3}\end{center}
+\begin{enumerate}
+	\item Учитывая целые числа $ a $ и $ b>0 $, покажем, что существует целое число $ r $ $ 0\le r<b $, такое что $ a=\left[\dfrac{a}{b}\right]b+r. $
+	\item Пусть $ x $ и $ y $ действительные числа. Докажите,ч то наибольшая целочисленная функция удовлетворяет следующим условиям:
+		\begin{enumerate}
+			\item $ \left[ x+n\right] =\left[ x\right] +n $ для любого целого числа $ n. $
+			\item $ \left[ x\right] +\left[ -x\right] =0 $ или $ -1 $, в зависимости от того, является ли $ x $ целым числом или нет. [\textit{Совет}: Пишите $ x=\left[ x\right] +\theta $, с $ 0\le\theta<1 $, так что $ -x=-\left[ x\right] -1+\left( 1-\theta\right).]  $
+			\item $\left[ x\right] +\left[ y\right] \le \left[ x+y\right]$ и ,когда $ x $ и $ y $ положительные, $\left[ x\right]\left[ y\right] \le\left[ xy\right] $.
+			\item $ \left[ \frac{x}{n}\right] =\left[ \frac{\left[ x\right] }{n}\right]  $ для любого положительного целого числа $ n $. 
+			
+			[\textit{Совет}: Пусть $ \frac{x}{n}=\left[ \frac{x}{n}\right] +\theta $, где $ 0\le \theta<1 $, тогда $ \left[ x\right] =n\left[ \frac{x}{n}\right] +\left[ n\theta\right]  $.]
+			\item $\left[\frac{nm}{k}\right] \ge n\left[ \frac{m}{k}\right] $ для целых положительных чисел $ n,m,k. $
+			\item $\left[ x\right] +\left[ y\right] +\left[ x+y\right] \le\left[ 2x\right] +\left[ 2y\right]$. [\textit{Совет}: Пусть $ x=\left[ x\right] +\theta,  0\le\theta<1$, и $y=\left[ y\right] + \theta', 0\le\theta'<1$. Рассмотрим случаи, в которых ни один или оба $\theta$ и $\theta'$ не превосходят $\frac{1}{2}$.]
+		\end{enumerate}
+	\item Найдите наивысшую степень от деления 5 на 1000! и от деления 7 на 2000!.
+	\item Найти показатель степени наибольшей степени деления простого числа $ p $ на
+		\begin{enumerate}
+			\item произведение $ 2\cdot4\cdot6\cdot...\cdot\left( 2n\right)  $ первых $ n $ четных целых чисел;
+			\item произведение $ 1\cdot3\cdot5\cdot...\cdot\left( 2n-1\right)  $ первых $ n $ нечетных целых чисел. [\textit{Совет}: Обратите внимание, что $ 1\cdot3\cdot5\cdot...\cdot\left( 2n-1\right)=\frac{\left( 2n\right)! }{2^{n}n!} $.]
+		\end{enumerate}	
+	\item Показать, что 1000! заканчивается 249 нулями.
+	\item Если $ n\ge1 $ и $ p $ просто число, даказать, что 
+		\begin{enumerate}
+			\item $\frac{\left( 2n\right)! }{\left( n!\right) ^{2}}$ это четное целое число. [\textit{Совет}: Используйте индукцию на  $ n $.]
+			\item Показатель высшей степени $ p $, который делит $ \frac{\left( 2n\right) !}{\left( n!\right) ^{2}} $ это
+			\[\sum_{k=1}^{\infty}\left( \left[ \frac{2n}{p^{k}}\right] -2\left[ \frac{n}{p^{k} }\right]\right).\]  
+			\item В простой факторизации $ \frac{\left( 2n\right) !}{\left( n!\right) ^{2}} $ показатель степени любого простого числа $ p $ такой, что $ n<p<2n $ равен 1.
+		\end{enumerate}	
+	\item Пусть положительное целое число $ n $ записывается в виде степеней простого числа $ p $ так, что $ n=a_{k}p^{k}+...+a_{2}p^{2}+a_{1}p+a_{0} $,где
+	
+	$ 0\le a_{i}<p $. Покажите, что показатель высшей степени $ p $, появляющийся в простом множестве $ n! $ это
+	\[\frac{n-\left( a_{k}+...+ a_{2}+a_{1}+a_{0}\right) }{p-1}.\]
+	\item 
+		\begin{enumerate}
+			\label{task7}
+			\item Используя Задание~\ref{task7}, покажите, что показатель степени наибольшей степени деления $ p $ на $ \left( p^{k}-1\right) ! $ это $ \frac{\left[ p^{k}-\left( p-1\right)k-1\right]   }{\left( p-1\right) } $. 
+			
+			[\textit{Совет}: Вспомните тождество $ p^{k}-1=\left( p-1\right) \left( p^{k-1}+...+p^{2}+p+1\right)  $.]
+			\item Определите наибольшую степень деления 3 на 80! и 7 на 2400!. [\textit{Совет}: $2400=7^{4}-1$.]
+		\end{enumerate}	
+	\item Найдите целое число $ n\ge1 $ такое, что наибольшая степень 5, делящаяся на $ n! $ без остатка, это 100. [\textit{Совет}: Поскольку сумма коэффициентов степеней 5, необходимых для выражения $ n $ в базе 5, равна не менее 1, начните с рассмотрения уравнения $ \frac{\left( n-1\right) }{4}=100 $.]
+	\item Учитывая положительное целое число $ N $, покажите, что 
+		\begin{enumerate}
+			\item $\sum\limits_{n=1}^{N}\mu(n)\left[ \frac{N}{n} \right] =1 $;
+			\item $\left|\sum\limits_{n=1}^{N}\frac{\mu(n)}{n}\right| \le1 $.
+		\end{enumerate}
+	\label{task10}	
+	\item Проиллюстрируйте Задачу~\ref{task10} в случае $ N=6 $.
+	\item Убедитесь, что формула 
+	\[\sum_{n=1}^{N}\lambda(n)\left[ \frac{N}{n}\right] =\left[ \sqrt{N}\right]\]
+	справедлива для любого положительного целого числа $ N $. [\textit{Совет}: Примените теорему 6-11 к мультипликотивной функции $ F(n)=\sum_{\tiny d|n}\lambda(d) $, отметив, что существуют $ \left[ \sqrt{n}\right]  $ идеальные квадраты, не превышающие $ n $.]
+\end{enumerate}
+\end{document}
